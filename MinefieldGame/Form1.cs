@@ -139,7 +139,7 @@ namespace MinefieldGame
         private void startButton_Click(object sender, EventArgs e)
         {
             enableButtons();
-
+            startButton.Enabled = false;
             myBombNumber_1 = r.Next(1, 17);
             myBombNumbers.Add(myBombNumber_1);
             do { myBombNumber_2 = r.Next(1, 17); }
@@ -147,9 +147,8 @@ namespace MinefieldGame
             myBombNumbers.Add((int)myBombNumber_2);
             do { myBombNumber_3 = r.Next(1, 17); }
             while (myBombNumbers.Contains(myBombNumber_3));
-            Console.WriteLine(myBombNumber_1 + " " + myBombNumber_2 + " " + myBombNumber_3);
-
             label1.Text = "Healths left: " + playerHealth;
+            label2.Visible = true;
             label2.Text = "Points: " + playerPoints;
         }
 
@@ -159,9 +158,6 @@ namespace MinefieldGame
             Button clicked_button = (Button)sender;
             clicked_button.Enabled = false;
             int button_id = Convert.ToInt32(clicked_button.Name.Substring(6));
-
-            Console.WriteLine(myBombNumber_1 + " " + myBombNumber_2 + " " + myBombNumber_3);
-
             tilesOpened++;
 
             if (myBombNumber_1 == button_id || myBombNumber_2 == button_id || myBombNumber_3 == button_id)
