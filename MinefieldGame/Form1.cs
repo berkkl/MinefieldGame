@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -114,8 +114,27 @@ namespace MinefieldGame
             restartButton.Text = "RESTART";
             startButton.Enabled = true;
             restartButton.Enabled = false;
-            disableButtons();  
+            disableButtons();
         }
+
+        public Image imageList(int myNumber)
+        {
+            Image[] resimler = new Image[]
+            {
+                Properties.Resources._1,
+                Properties.Resources._2,
+                Properties.Resources._3,
+                Properties.Resources._4,
+                Properties.Resources._5,
+                Properties.Resources._6,
+                Properties.Resources._7,
+                Properties.Resources._8,
+                Properties.Resources._9,
+            };
+
+            return resimler[myNumber - 1];
+        }
+
 
         private void startButton_Click(object sender, EventArgs e)
         {
@@ -158,51 +177,8 @@ namespace MinefieldGame
             }
             else
             {
-                if (myNumber == 1)
-                {
-                    clicked_button.BackgroundImage = Properties.Resources._1;
-                    playerPoints += 1;
-                }
-                else if (myNumber == 2)
-                {
-                    clicked_button.BackgroundImage = Properties.Resources._2;
-                    playerPoints += 2;
-                }
-                else if (myNumber == 3)
-                {
-                    clicked_button.BackgroundImage = Properties.Resources._3;
-                    playerPoints += 3;
-                }
-                else if (myNumber == 4)
-                {
-                    clicked_button.BackgroundImage = Properties.Resources._4;
-                    playerPoints += 4;
-                }
-                else if (myNumber == 5)
-                {
-                    clicked_button.BackgroundImage = Properties.Resources._5;
-                    playerPoints += 5;
-                }
-                else if (myNumber == 6)
-                {
-                    clicked_button.BackgroundImage = Properties.Resources._6;
-                    playerPoints += 6;
-                }
-                else if (myNumber == 7)
-                {
-                    clicked_button.BackgroundImage = Properties.Resources._7;
-                    playerPoints += 7;
-                }
-                else if (myNumber == 8)
-                {
-                    clicked_button.BackgroundImage = Properties.Resources._8;
-                    playerPoints += 8;
-                }
-                else if (myNumber == 9)
-                {
-                    clicked_button.BackgroundImage = Properties.Resources._9;
-                    playerPoints += 9;
-                }
+                clicked_button.BackgroundImage = imageList(myNumber);
+                playerPoints += myNumber;
                 label2.Text = "Points: " + playerPoints;
             }
             if (tilesOpened + playerHealth == 16)
@@ -211,7 +187,6 @@ namespace MinefieldGame
                 label1.Text = "Congratulations! Your score is: " + playerPoints;
                 startButton.Enabled = true;
             }
-
         }
         private void restartButton_Click(object sender, EventArgs e)
         {
