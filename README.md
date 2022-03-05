@@ -1,5 +1,5 @@
 # MinefieldGame
-Basic C# Windows Application Game
+Basic C# Windows Application Game that I did in the Ecodation Game Developement Course!
 
 
 ## Opening Screen
