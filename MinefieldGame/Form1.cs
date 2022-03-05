@@ -32,7 +32,6 @@ namespace MinefieldGame
         {
             return r.Next(1, 10);
         }
-
         public void enableButtons()
         {
             button1.Enabled = true;
@@ -53,7 +52,6 @@ namespace MinefieldGame
             button16.Enabled = true;
             restartButton.Enabled = true;
         }
-
         public void disableButtons()
         {
             button1.Enabled = false;
@@ -73,7 +71,6 @@ namespace MinefieldGame
             button15.Enabled = false;
             button16.Enabled = false;
         }
-
         public void resetBackgrounds()
         {
             button1.BackgroundImage = Properties.Resources.mine;
@@ -93,7 +90,6 @@ namespace MinefieldGame
             button15.BackgroundImage = Properties.Resources.mine;
             button16.BackgroundImage = Properties.Resources.mine;
         }
-
         public void resetBombPlaces()
         {
             myBombNumbers.Clear();
@@ -106,7 +102,6 @@ namespace MinefieldGame
             while (myBombNumbers.Contains(myBombNumber_3));
         }
 
-
         private void Form1_Load(object sender, EventArgs e)
         {
             label1.Text = "WELCOME!";
@@ -116,7 +111,6 @@ namespace MinefieldGame
             restartButton.Enabled = false;
             disableButtons();
         }
-
         public Image imageList(int myNumber)
         {
             Image[] myImages = new Image[]
@@ -134,24 +128,15 @@ namespace MinefieldGame
 
             return myImages[myNumber - 1];
         }
-
-
         private void startButton_Click(object sender, EventArgs e)
         {
             enableButtons();
             startButton.Enabled = false;
-            myBombNumber_1 = r.Next(1, 17);
-            myBombNumbers.Add(myBombNumber_1);
-            do { myBombNumber_2 = r.Next(1, 17); }
-            while (myBombNumbers.Contains(myBombNumber_2));
-            myBombNumbers.Add((int)myBombNumber_2);
-            do { myBombNumber_3 = r.Next(1, 17); }
-            while (myBombNumbers.Contains(myBombNumber_3));
+            resetBombPlaces();
             label1.Text = "Healths left: " + playerHealth;
             label2.Visible = true;
             label2.Text = "Points: " + playerPoints;
         }
-
         private void my_buttons(object sender, EventArgs e)
         {
             int myNumber = getRandomNumber();
