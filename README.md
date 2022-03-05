@@ -1,5 +1,5 @@
 # MinefieldGame
-Basic Windows Application Game
+Basic C# Windows Application Game
 
 
 ## Opening Screen
