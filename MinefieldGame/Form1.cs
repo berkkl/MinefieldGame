@@ -119,7 +119,7 @@ namespace MinefieldGame
 
         public Image imageList(int myNumber)
         {
-            Image[] resimler = new Image[]
+            Image[] myImages = new Image[]
             {
                 Properties.Resources._1,
                 Properties.Resources._2,
@@ -132,7 +132,7 @@ namespace MinefieldGame
                 Properties.Resources._9,
             };
 
-            return resimler[myNumber - 1];
+            return myImages[myNumber - 1];
         }
 
 
